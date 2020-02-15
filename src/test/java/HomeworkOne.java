@@ -4,48 +4,27 @@ import org.junit.jupiter.api.Test;
 import java.util.Scanner;
 
 public class HomeworkOne {
-
     @Test
-    public static void main(String[] args) {
+    public void homeworkOne() {
         System.out.println("TASK 1");
-        Scanner input = new Scanner(System.in);
-        System.out.println("Enter car: ");
-        String car = input.next();
-        System.out.println("Enter price: ");
-        double price = input.nextDouble();
-        System.out.println("Enter mileage");
-        double mileage = input.nextDouble();
+        String car ="tesla";
+        double price = 355.111;
+        double mileage = 39911.136;
         System.out.println("Prodam " + car + " za cenu " + price + " s probegom " + mileage);
 
 
-        // uzd 2
         System.out.println("TASK 2");
-        double cena = 3.57;
-        System.out.println("Vvedite skolko samolet ispolzuet topliva (v litrah) na 100 km:");
-        double toplivoNaSto = input.nextDouble();
-        System.out.println("Vvedite skolko samolet proletel (v kilometrah):");
-        double rasstojanie = input.nextDouble();
-        double stoimost = rasstojanie * toplivoNaSto / 100 * cena;
-        System.out.println("Polet samoleta stoil: " + stoimost + " eiro");
+        double fuelCost = 3.57;
+        double fuelOnHundredKm = 80;
+        double distance = 100;
+        double flycost = distance * fuelOnHundredKm / 100 * fuelCost;
+        System.out.println("Cost of the flight: " + flycost + " eiro");
 
-        //uzd 3
         System.out.println("TASK 3");
-        System.out.println("Vvedite personalnij kod");
-        String personalnijKod = input.next();
-        taskThree(personalnijKod);
+        taskThree("260698-10905");
 
-        //uzd 4
         System.out.println("TASK 4*");
-        //sorry zdes' tolko nado zamenit' . na ,
-        System.out.println("Enter latitude of 1 place: ");
-        double latitudeFirst = input.nextDouble();
-        System.out.println("Enter longitude or 1 place: ");
-        double longitudeFirst = input.nextDouble();
-        System.out.println("Enter latitude of 1 place: ");
-        double lattitudeSecond = input.nextDouble();
-        System.out.println("Enter longitude or 1 place: ");
-        double longitudeSecond = input.nextDouble();
-        distance(latitudeFirst, lattitudeSecond, longitudeFirst, longitudeSecond);
+        distance(56.950075, 56.959433 ,24.120794, 24.119210);
     }
 
     private static double distance(double latitudeFirst, double latitudeSecond, double longitudeFirst,
