@@ -96,8 +96,7 @@ public class HomeworkOne {
         System.out.println("You are born " + day + " " + monthInWords + " " + yearBeginning + yearEnd);
     }
 }
-//public static void main(String[] args) chto eto takoe i pochemu ne mogu ispolzovat' eshe raz
-//static --?
+
 
 
 
