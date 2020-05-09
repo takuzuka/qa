@@ -15,10 +15,6 @@ public class DelfiHomework {
 
     private final By ARTICLE_TITLE = By.xpath(".//div[contains(@class, 'article-title')]");
     private final By TITLE_NAME = By.xpath(".//h1[contains(@class, 'd-inline')]");
-    private final By COMMENT_TITLE = By.xpath(".//a[contains(@class, 'text-red-ribbon')]");
-
-    private final By COMMENT_COUNT = By.xpath(".//ul[@class ='select-type']");
-    private final By COMMENT_ANON_REGISTRED = By.xpath(".//span[@class='type-cnt']");
 
     @Test
     public void DelfiSecondArticles() {
@@ -42,25 +38,16 @@ public class DelfiHomework {
         } else if (comments.size() == 0) {
             comment = "0";
         }
-        System.out.println(comment);
-        //click statja
+
+
+
         article.click();
+
         driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
         List<WebElement> articlePage = driver.findElements(ARTICLE_TITLE);
         WebElement articleTitle = articlePage.get(0);
         String title = articleTitle.findElement(TITLE_NAME).getText();
-        System.out.println(title);
-
-
-        List<WebElement> articleComments = articleTitle.findElements(COMMENT_TITLE);
-        String comm = "0";
-        for (int i = 0; i < 2; i++) {
-            comm = articleComments.get(i).getText();
-            String comma = comm.replaceAll("[()]", "");
-            int caca = Integer.parseInt(comma);
-        }
         Assertions.assertEquals(articleText.trim(), title.trim(), "Article names is not equal");
-        // Assertions.assertEquals(comment, articleComment, "comment count is not equal");
     }
 
 }
